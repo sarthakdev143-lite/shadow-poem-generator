@@ -1,15 +1,17 @@
 ---
-title: Shadow — Classical Poetry Generator
+title: Shadow Poem Generator
 emoji: 🌙
 colorFrom: indigo
-colorTo: purple
+colorTo: pink
 sdk: gradio
-sdk_version: "4.44.0"
+sdk_version: 6.6.0
 app_file: app.py
 pinned: false
+license: mit
+short_description: LSTM trained on the works of Shakespeare, Blake & Dickinson
 ---
 
-# 🌙 Shadow — Classical Poetry Generator
+# 🌙 Shadow [Classical Poetry Generator]
 
 A word-level LSTM trained from scratch on the works of **Shakespeare, Blake & Dickinson**.
 
