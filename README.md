@@ -13,9 +13,9 @@ short_description: LSTM trained on the works of Shakespeare, Blake & Dickinson
 
 # 🌙 Shadow [Classical Poetry Generator]
 
-A word-level LSTM trained from scratch on the works of **Shakespeare, Blake & Dickinson**.
+A word-level LSTM trained from *scratch* on the works of **Shakespeare, Blake & Dickinson**.
 
-Built in one day on a 13-year-old laptop (HP ProBook 6470b, i5-3320M) as a personal AI/ML project.
+Built in one day on a 13-year-old laptop (HP ProBook 6470b, i5-3320M, DDR3 8GB) as a personal AI/ML project by a *17y/o during his preparation leaves of class 12th Math Board exam.*
 
 ## What it does
 - Generates original poetry in the style of classical English poets
