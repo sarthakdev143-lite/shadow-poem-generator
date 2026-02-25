@@ -1,0 +1,592 @@
+=== Generation run @ 2026-02-25 15:18:03 ===
+
+[text] prompt='Moonlight on the river' temp=0.60 sample=1
+<unk> on the river,
+and all we need of hell.
+i knew not more that drunken stepped;
+a bliss in proof, - - how, "i will tell!
+but, now a summer at once,
+just as one of noon,
+or even their way
+like balls upon its sea, well!
+never can it be!
+the soul should always stand ajar,
+and bees, whose may be straight, some say
+my only thought - rhyme "
+a happy title do a face
+if immortality was
+to that which it had come again.
+but what of thee? when thou dost stay!
+ten times thyself at me in my verse ever live young.
+i am not with you and things turn with the self - birds,
+when you have done, ever fly.
+love is
+
+[text] prompt='Moonlight on the river' temp=0.60 sample=2
+<unk> on the river,
+and this brief more could only live
+and estimate the day.
+on such a night, or such a room
+when was he bird,
+immortal alps look down,
+the clover - bells forgot.
+that would be a star,
+the one i shall not want!
+i should have been too glad, i see,
+no eye can estimate,
+and peace the human dress; my dim
+the voice of the east
+from his low had,
+the little bird
+her voice among the child
+that in the soul
+of all the children;
+the ones that one may be,
+how many times they bore me why of love?
+or art thou lov'st elsewhere, i haste thee in!
+but, if my love what is most dear,
+give but itself,
+
+[text] prompt='Moonlight on the river' temp=0.68 sample=1
+<unk> on the river could keep
+upon her silver;
+then, punctual as a star,
+so sure i d come back
+and throw away the road.
+"of the night?
+the past.
+the seasons fit a little, though i feel,
+had he the power to die.
+i had a crimson robin
+who sang full many a day,
+but when the woods were painted
+we too heavy be, it seems,
+but then from me, - - that is all we joy;
+but my five right gracious keep even now.
+you may have no more can see you? "
+or some here more in the poor pleasure life!
+so i sung the same again,
+while he wept with for thyself to show,
+doth teach that ease and all things rare,
+made my heart
+
+[text] prompt='Moonlight on the river' temp=0.68 sample=2
+<unk> on the river,
+and this must be the same.
+we are the mortal side i had a tomb
+for an opposing cloud.
+from what the winter may be
+than those two hath got as with flowers.
+in all external if at some blind look
+time's fool is love,
+that you yourself, being made it, my verse shall stay.
+your eyes have drawn thy name, and you must live,
+or, of thine, i am i can trace;
+now, what a better state to me,
+and in the other place that i do show
+in a rich old rose, because he
+a fly away
+we estimate our prize, -
+to know if any human face was gone,
+but did they go on every pen,
+and live no more to shame,
+or noon
+
+[text] prompt='In the quiet night' temp=0.60 sample=1
+in the quiet night a little,
+that not a beggar would give,
+the walls began to tell;
+i could not find it that i prove,
+but if some were too still are here;
+if he can die of me,
+till to miss an ear,
+as one as long away you.
+how softly o the morning, glad and smiled the first,
+the trembling woman is heard,
+had, such sort, happy play,
+who in these below the amber side, - -
+it's such a common grave,
+and then we could keep so slow
+without little heart.
+t is far, i wished night so.
+it makes an even face
+of mountain and of plain, - -
+a dateless melody.
+it's like the woods,
+as birds she looked in one
+
+[text] prompt='In the quiet night' temp=0.60 sample=2
+in the quiet night a little,
+a happy blossom
+sees you, swift as arrow,
+seek your cradle narrow,
+near my bosom.
+pretty, pretty robin!
+under leaves so green
+a happy blossom
+hears you new,
+to bind another - mother?
+come in thy breast, where the sun, till the night;
+he came not knowing when time came be
+to those who look on me,
+underneath this tree;
+yet nor the lays of birds have heaven the world.
+who win, and all the rest could bring,
+whose dying had did make.
+there is a word
+which in the desert wild!
+it is not so heavy as mine,
+as any mother's child, though new - love is only,
+on me can you? o!
+he of these black are
+
+[text] prompt='In the quiet night' temp=0.68 sample=1
+in the quiet night a little, though.
+at least to pray is left, is left.
+they d like more.
+i reason that he ceased;
+how many times these did meet the very
+absence of these and of "
+an anguish -
+a purple finger on her head
+the far from toil,
+his other peep
+to make sure breath asleep.
+the snow?
+the hills are fair, - - gathered from the gales,
+as i guard gone to sleep,
+and each sleeping come;
+how softly through the altered air
+would the little black, "come in the night,
+it asked a crumb of me.
+dare you see a common grave,
+when that was in earth am now,
+with tender majesty.
+we learn in the night
+peculiar bird,
+
+[text] prompt='In the quiet night' temp=0.68 sample=2
+in the quiet night a little,
+that not a beggar would give,
+the solemn
+had he upon the furthest summer days
+this little heart!
+death sets a thing the fingers went,
+his other peep
+to keep your mind - -
+should reach the little ones, - -
+a miracle for all!
+how glad i am, and then i looked;
+the judgment perished, among itself,
+their glory nought but in the kind of love
+a foe as a cloud it met one.
+he will tell me how far the morning boy,
+her pretty rose, the while,
+a little water wind
+is numb three - as common boy
+have been sleeping to us
+at the setting sun,
+a hurrying home from fair,
+as if no soul to him grown so.
+but bliss
+
+[text] prompt='At dawn, I remember' temp=0.60 sample=1
+at dawn, i remember some love things hate.
+my love is my love to make you are,
+the uncertain love to thy heart that she are both, now reason, me yet it came;
+and so no more that i can pass
+that such doth beauty of thee hast,
+and of this fair gift in me now is out;
+and thus i then, excuse my tongue
+from the church to pray the church to pray.
+i feel the lords we sang,
+and the heaven inquire;
+t was such a little, without
+a something in a cup,
+yet it just as his hand.
+who win, and dust the best, will bestow the table,
+before the seal!
+next time, to stay!
+and see just cause of fear; beauty,
+that it can so go,
+
+[text] prompt='At dawn, I remember' temp=0.60 sample=2
+at dawn, i remember some friend travelling in sense,
+and peace was paradise!
+the air should do not told
+it then without me, - -
+he never heard them any bay, - -
+as soon as a surmise,
+a service of more.
+the most birds, setting still the door;
+to kiss it is born of heaven?
+i will not be pursued!
+he has hid his rare life
+from our gross eyes.
+t is an instant's play,
+what right i said, for just my marble feet
+is but the little stone
+would feel as a very tree,
+the one the other will.
+"and it's good faith.
+it makes no difference abroad, - -
+a "because they would have been
+the birds song
+the heaven an april in mind,
+
+[text] prompt='At dawn, I remember' temp=0.68 sample=1
+at dawn, i remember some friend travelling in possession so;
+till each they died on every pen,
+is he more to be new - -
+behold the morning star,
+the little toil of day and night!
+except for this world i heard
+was nearer away the curtains of the
+pencil, yet not love disgrace me.
+if i, not show my head my head, to decay,
+the mind that was true it that plea.
+your only sweet knows the gracious light fled had
+still shall in up her from the day - -
+and never - us'd in giving gentle name;
+for love of beauty set within and
+and die as fast as a surmise i not,
+you have lived in such a flower?
+so shall you see what they see where are rich, and yet am blind away
+with beauty's treasure
+
+[text] prompt='At dawn, I remember' temp=0.68 sample=2
+at dawn, i remember some tell!
+death is the while of the roses.
+tis a mighty night;
+of white and i had come,
+except as a surmise,
+i take it not.
+but as i that have been too much alone
+must be the same own.
+did the world will you were written - speaking doth sit:
+whose will do not when he is most,
+who are in favour what time and beauty of me,
+that our grief - contented as,
+have passed their eyes have died
+on the grass would hurry,
+but something held my eyes.
+as if the little figure
+the dial their eyes,
+none buy it puzzled came;
+if wilderness prevent her,
+as if my trade were bone.
+it is not the fingers are in the tree,
+or cool
+
+[poem] prompt='Moonlight on the river' temp=0.60 sample=1
+, and live? "no weight nor mass nor beauty
+Of light in her cheeks; but a new - -
+Don't tell you! "t is will be! "
+T is it that goes of gold.
+
+, and yet to leave my friend,
+- - no weight can lie, and then you wished you do.
+In thee! "come! "t will keep them any hours from know you,
+- - "what liberty? "i will, for me!
+
+, and know of your desire. it was when is the store
+; then thou hast moan, but sweetness,
+This flattery? "it was before, a very few, from some part;
+Those who read what time without boast,
+
+, and know what time then so slow
+, but they would have been too much
+Thine? "no verse, but one to be dear,
+Desire gave thee life of love; but a thorn
+
+, and more will be. in thee!
+- - life had; "how sweet, was thought, you,
+You, you, you, you, you, you know.
+Such verse. "t is true, are sweetest me with thee:
+
+[poem] prompt='Moonlight on the river' temp=0.60 sample=2
+, and know - - "things thee in one,
+Or else so. who boast, love you not made
+It, dear friend, "i will tell!
+"t was later, until delirious two!
+
+, and one, and gives his heat away,
+- - life! "i have seen the apple bright
+, - - each happy child, till you have no end,
+For will say me then? so,
+
+, and know - - "things thee in one,
+Which should a beggar? "without the north of love
+, nor no man, but that very instant
+Passed! "white roses have i read a letter,
+
+, and know i meet my soul?
+"it is, of more! said please
+To be; - - - - - - - - - - just a little bush.
+"- - ""the thought below the fields i read,
+
+, and know of your desire. it was when the summer will tell!
+""t is will with you are!
+"at the firmament, i heard her light,
+Known. "a very few, was the distance
+
+[poem] prompt='Moonlight on the river' temp=0.68 sample=1
+, a fame so; but she is
+Nought or heaven can be one, and his tongue shall lie,
+And you should live.. words to me:
+He wept so old to dwell, - -
+
+, and know how pleased to be gone.
+It. "god. "t is death, "i don't tell,
+- - life! "i will, know how, she withdrew again,
+Nor no man, but day, i think
+
+, and know what time behind should night,
+Sometimes almost making all: "tis thee,
+Gentle love, sweet, joy; yet ten times i told;
+Be so bold, desire, to triumph;
+
+, and know the rest:; but she
+Had left, but doth lend, a very
+Few, dear friend, "no weight nor mass nor beauty
+Being full of your comfort, i have known,
+
+, and know what time of year,
+- - white! "so i had a daily bliss
+Of joy; "because "tell me each night that asked no other
+Be so, i love thee: ah?
+
+[poem] prompt='Moonlight on the river' temp=0.68 sample=2
+, and tell a face. it is
+The fall, but not acquainted were kind of praise.
+And grief, which makes those sin had
+Broken them light: ". "t will keep.
+
+, and know what time of friend or trivial.
+In these? "the even you were but read, but in this,
+Grew more red. "t is nature's friends, was a sent it was with clear
+- - same and bird. "and was the sun,
+
+, and know of this large enough. "
+. "t is daisy in their age,
+Not all their eyes, i say;
+Tell him! friend would have no more can
+
+, and live and leave me quite,
+With two alone did lie. my body is
+Love, as thine, and all those parts more,
+Were when in thy breast: can bring forth thee make thine.
+
+, and know - - "things thee in one,
+Or if i have, as if thou catch thy days,
+Of my thought, you? when, if ever make you,
+Though yet your will say, the soul
+
+[poem] prompt='In the quiet night' temp=0.60 sample=1
+A room the eye, unused to flow,
+I think it steal, no name,
+"of all. "said. it was its hungry
+Innocent hands - day, he bore, but as the gracious light.
+
+A little, though. come; and feel
+No cause. "tell him of earth, i haste me in my sight,
+To - morrow kind, that thou dost common grow?
+"me! what eyes will have you saved,
+
+A little, though. would not feel
+. "he verse again; but she is never half but one, and will you tell!
+"t will be a rose, it worked so.
+"people of this birds are one.
+
+, of heaven; be quite, i read my body that is in all
+. me? o friend! "i will, know not,
+If they have, where you, will tell thee?
+"i will tell! the sweet morning,
+
+A little, though. her love was as she doth cover
+Which this change are spent: no part to be seen
+.; no but once, but me be white!
+Now can lie, the better part:
+
+[poem] prompt='In the quiet night' temp=0.60 sample=2
+A little, - - "i have sworn thee one, and me as happy nothing,
+As to each friend or, "but the forty - -
+He is so, that you can you know you so.
+"so, "i hold her love, i say,
+
+A little, though. come never thought
+, they had, "how is the land the grave,
+"i had beheld in eden, but, - -
+It's finer us; and then a star,
+
+A little, though. yet not when he comes not hate,
+Nor i own self respect, to die:
+He doth follow, nor sweet skill,
+I thought: so pretty but do,
+
+, of heaven; be! "it, everything, wind,
+"i know her; "i don't know what time
+, ""i think it pleased to all your sight.
+. and while are of this is my great fire was;
+
+A little, though. was scarce did frame
+The liberty; "which it was but an end,
+Yet it stirs so bold. for friend, - -
+The grave before its close behind; but she is
+
+[poem] prompt='In the quiet night' temp=0.68 sample=1
+, of heaven; be it ill hide,
+From me bow. old words new:
+That only me, my love, though in thy face
+Might; but thou art, no need i.
+
+A little, though. come, i feel;
+"but she, as a kind of praise;
+It has been hungry; but as she
+Had come, nor no man, but lack tongues to his store;
+
+A little, though. come, i feel;
+"it "it if, she would be said
+, i am set; but she is
+Nought by two, being full of sun,
+
+A purple host, "and it grew may be;
+- - no weight nor mass nor beauty
+First, tis held, that thou the dumb?
+"t is nature's act thy love, now have lived within my white
+
+A little, though. would hang a
+Little boat such, was foreign i be
+Gone, - - life white, as she is thee.
+"but each thought takes! it hung!
+
+[poem] prompt='In the quiet night' temp=0.68 sample=2
+And day, i say to god;
+Yet nor my love as these, have often me alone
+, be thought so you.; then love you
+Leave my heart, - - love, one more
+
+A room the eye, unused to flow,
+I think it steal, no light upon men are free:
+Can hold me, my weary call;
+Thee you of thee will. my grief
+
+A little, though. "where he can
+Tell; he doth grow thee? is
+He shows in the world; it worked for many a very same, - - each happy blossom
+, a bird or two, being theirs,
+
+A little, though. would not always stand
+And girls and love. what will stand,
+"till you should prepare, all show
+Me pain, do witness thee: that i return where thou art left behind,
+
+A room; "nature half each other place.
+Say! - - forgot, - - no eyes no verse to know.
+: no but be gone, as they do not you
+? "for thee, - - that is from me my state,
+
+[poem] prompt='At dawn, I remember' temp=0.60 sample=1
+Some tell! thou art gone, become;
+Knowing thou age, that you should be
+The shame - day, can i not set me free:
+: - - no verse to think in thee,
+
+Him it god. while thy cruel eye outworn,
+Even you? "till you got your own begin?
+"i read, but heaven, some love of many, a best acquainted,
+To die, the lips doth tell her lips of short,
+
+Some friend she often lies, that you will, some say that all alone?
+- - what eyes, or none, or few, was poor.
+"said is it, prove the two are gone
+, but sweetness tell. "t is me, you know!
+
+Some say: he went to see,
+- - life! "i will, know how still the world -
+End hour to store. in thee of
+Life to win? "come! tell him - - no sun! "
+
+Some doubt, - - each night to owe,
+Till? the purple creature, known with
+"time; love her, had not skill,
+And death published them flowers: of evidence
+
+[poem] prompt='At dawn, I remember' temp=0.60 sample=2
+Some friend she often lies, that you tell!
+"that you are you, so i say;
+In any cheek, you, you, you, to you tell you
+. "t is found, indeed, i fail;
+
+Some love bearing: he bore away?
+What published, a time do i see thee,
+Be gone, but in her cheeks;
+Of so, i return again; be told to be new:
+
+Some love; nor you shall shine so,
+As thou dost common grow. me?
+What eyes can it, or two, i will,
+You know, "because she lived, if such have lived, known,
+
+Some love bearing: he wept to hear.
+"where can it be fair whereon my false,
+- - some tell me; you i have so great,
+"i must not know the very same
+
+Some friend she often lies, that you will weigh by the
+Grave, "which now; behind a death
+- - no! know; but if have kind,
+I am, no you can hold me.
+
+[poem] prompt='At dawn, I remember' temp=0.68 sample=1
+Some love? "tis no man well of your sweet hue,
+Will tell you? "i have no more?
+Why. it was but death; be not,
+Then writ do, till mine eye well or heart;
+
+Some tell! thou art gone, if love is
+Not, yet i leave true, tis desire
+; you so, be so; but she is left, but still.
+Most proud full with white; and let that fire was;
+
+Some doubt, - - each night to owe,
+Till her sister or four poems in this huge part:
+"- - - - - and great more of the poor.
+Was ever stand the one; "which yet love had not make the
+
+Some tell! thou art it is will.
+My verse, dear, "truth, tis true,
+Was hand? "- - - - - how, - - just a little compare!
+"t is it by night, it went as near,
+
+Him; but she is made of god,
+Can hold his head. who are nothing heaven the
+Best, even so great i. even
+Pace kind; which now they tell,
+
+[poem] prompt='At dawn, I remember' temp=0.68 sample=2
+Some love things hate. dear friend, - -
+Life! "i will, some say he
+! said i have known, "i read, "i stand gone,
+As any men, but you, or help,
+
+Some flower day; be not, or, only me
+I meet, ""it will make me!
+"how excellent! ""i touched the road
+The cold, - - "because if some sweet - -
+
+Not; yet then i am, as they can be old.
+And born: no love had brought, each
+Fields come so near, and so fair
+; so him that you before; you, in face all those pain.
+
+Some friend gave, be? "no will be done!
+- - life can death? "it is fair,
+But figures more by this alone. most
+Proud pass, are sweetest white. then
+
+Some friend she often lies, that you will, some say so,
+- - each life could death? "t was like a man!
+Without a bird, if it has no more can
+Pass. one. such substance lived and feel,
+
