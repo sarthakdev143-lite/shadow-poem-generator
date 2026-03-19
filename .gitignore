@@ -3,9 +3,6 @@ __pycache__/
 *.py[cod]
 .env
 
-# Local notes
-AGENT_BRIEFING.md
-
 # Generation logs and evaluation outputs
 poem_samples*.txt
 fair_decode*.txt
@@ -24,6 +21,7 @@ poems_combined_v*.txt
 poems_indian_raw.txt
 poems_pure_lyric*.txt
 poems_western_extra_raw.txt
+poems.txt
 
 # Local checkpoints and model exports
 *.pt
