@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Shadow — Classical Poetry Generator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0e0c0a;
+    --bg2: #151210;
+    --bg3: #1c1814;
+    --gold: #c9a96e;
+    --gold2: #e8c98a;
+    --cream: #f0e6d0;
+    --muted: #7a6a56;
+    --border: #2a2318;
+    --glow: rgba(201,169,110,0.15);
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--cream);
+    font-family: 'EB Garamond', Georgia, serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── Grain texture overlay ── */
+  body::before {
+    content:'';
+    position:fixed; inset:0; pointer-events:none; z-index:100;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    opacity: 0.4;
+  }
+
+  /* ── Header ── */
+  header {
+    text-align: center;
+    padding: 4rem 2rem 2rem;
+    position: relative;
+  }
+
+  .moon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 1rem;
+    animation: float 4s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--gold2);
+    text-shadow: 0 0 60px rgba(201,169,110,0.3);
+    line-height: 1;
+  }
+
+  .tagline {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--muted);
+    margin-top: 0.75rem;
+    letter-spacing: 0.05em;
+  }
+
+  .divider {
+    width: 120px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 2rem auto;
+  }
+
+  /* ── Main layout ── */
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem 4rem;
+  }
+
+  /* ── Mode tabs ── */
+  .tabs {
+    display: flex;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+  }
+
+  .tab {
+    flex: 1;
+    padding: 0.75rem;
+    background: var(--bg2);
+    border: none;
+    color: var(--muted);
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-right: 1px solid var(--border);
+  }
+  .tab:last-child { border-right: none; }
+  .tab.active {
+    background: var(--bg3);
+    color: var(--gold2);
+    box-shadow: inset 0 -2px 0 var(--gold);
+  }
+  .tab:hover:not(.active) { color: var(--cream); background: var(--bg3); }
+
+  /* ── Prompt area ── */
+  .prompt-wrap {
+    position: relative;
+    margin-bottom: 1.5rem;
+  }
+
+  .prompt-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  textarea#prompt {
+    width: 100%;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--cream);
+    font-family: 'EB Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    padding: 1rem 1.25rem;
+    resize: none;
+    height: 72px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    outline: none;
+  }
+  textarea#prompt:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px var(--glow);
+  }
+  textarea#prompt::placeholder { color: var(--muted); }
+
+  /* ── Controls grid ── */
+  .controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .control-group { display: flex; flex-direction: column; gap: 0.4rem; }
+
+  .control-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .control-label span {
+    color: var(--gold);
+    font-size: 0.85rem;
+    letter-spacing: 0;
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+  }
+
+  input[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 2px;
+    background: var(--border);
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 8px rgba(201,169,110,0.5);
+    transition: transform 0.2s;
+  }
+  input[type=range]::-webkit-slider-thumb:hover { transform: scale(1.3); }
+
+  /* Radio for lines per poem */
+  .radio-group {
+    display: flex;
+    gap: 0.75rem;
+  }
+  .radio-group label {
+    display: flex; align-items: center; gap: 0.35rem;
+    font-family: 'EB Garamond', serif;
+    font-size: 0.95rem;
+    color: var(--muted);
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  .radio-group label:has(input:checked) { color: var(--gold2); }
+  .radio-group input[type=radio] { accent-color: var(--gold); }
+
+  /* ── Generate button ── */
+  .generate-btn {
+    width: 100%;
+    padding: 1rem;
+    background: transparent;
+    border: 1px solid var(--gold);
+    border-radius: 4px;
+    color: var(--gold2);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 2rem;
+  }
+  .generate-btn::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(201,169,110,0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.5s;
+  }
+  .generate-btn:hover::before { transform: translateX(100%); }
+  .generate-btn:hover {
+    background: rgba(201,169,110,0.08);
+    box-shadow: 0 0 20px rgba(201,169,110,0.2);
+  }
+  .generate-btn:active { transform: scale(0.99); }
+  .generate-btn:disabled {
+    opacity: 0.4; cursor: not-allowed;
+  }
+  .generate-btn:disabled::before { display: none; }
+
+  /* ── Output area ── */
+  .output-wrap {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    min-height: 280px;
+    padding: 2rem 2.5rem;
+    position: relative;
+    transition: border-color 0.3s;
+  }
+  .output-wrap.active { border-color: rgba(201,169,110,0.3); }
+
+  .output-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .output-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .copy-btn {
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    color: var(--muted);
+    font-family: 'EB Garamond', serif;
+    font-size: 0.8rem;
+    padding: 0.2rem 0.6rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 0.05em;
+  }
+  .copy-btn:hover { border-color: var(--gold); color: var(--gold); }
+
+  #output {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.15rem;
+    line-height: 2;
+    color: var(--cream);
+    white-space: pre-wrap;
+    min-height: 200px;
+  }
+
+  /* Poem dividers between stanzas */
+  #output .stanza-divider {
+    display: block;
+    text-align: center;
+    color: var(--gold);
+    opacity: 0.4;
+    margin: 1rem 0;
+    font-size: 0.8rem;
+    letter-spacing: 0.3em;
+  }
+
+  /* Loading animation */
+  .loading-dots {
+    display: inline-flex;
+    gap: 6px;
+    align-items: center;
+    color: var(--muted);
+    font-style: italic;
+  }
+  .loading-dots span {
+    width: 5px; height: 5px;
+    background: var(--gold);
+    border-radius: 50%;
+    animation: pulse 1.2s ease-in-out infinite;
+    opacity: 0.3;
+  }
+  .loading-dots span:nth-child(2) { animation-delay: 0.2s; }
+  .loading-dots span:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes pulse { 0%,100%{opacity:0.3} 50%{opacity:1} }
+
+  /* Typewriter cursor */
+  .cursor {
+    display: inline-block;
+    width: 2px; height: 1.1em;
+    background: var(--gold);
+    margin-left: 2px;
+    vertical-align: text-bottom;
+    animation: blink 1s step-end infinite;
+  }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+  /* ── Prompt suggestions ── */
+  .suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .suggestion {
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    color: var(--muted);
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    padding: 0.25rem 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .suggestion:hover { border-color: var(--gold); color: var(--gold2); }
+
+  /* ── Footer ── */
+  footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--muted);
+    font-size: 0.85rem;
+    font-style: italic;
+    border-top: 1px solid var(--border);
+    margin-top: 3rem;
+  }
+
+  /* ── Error state ── */
+  .error { color: #c07070; font-style: italic; }
+
+  /* ── Responsive ── */
+  @media (max-width: 600px) {
+    .controls { grid-template-columns: 1fr; }
+    h1 { font-size: 3rem; }
+    .output-wrap { padding: 1.25rem; }
+  }
+
+  /* Entry animation */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.8s ease forwards;
+  }
+  @keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
+  .fade-up:nth-child(2) { animation-delay: 0.1s; }
+  .fade-up:nth-child(3) { animation-delay: 0.2s; }
+  .fade-up:nth-child(4) { animation-delay: 0.3s; }
+</style>
+</head>
+<body>
+
+<header>
+  <span class="moon">🌙</span>
+  <h1 class="fade-up">SHADOW</h1>
+  <p class="tagline fade-up">A classical poetry generator · Shakespeare · Blake · Dickinson</p>
+  <div class="divider"></div>
+</header>
+
+<main>
+
+  <!-- Mode tabs -->
+  <div class="tabs fade-up">
+    <button class="tab active" onclick="setMode('verse')">Free Verse</button>
+    <button class="tab" onclick="setMode('stanza')">Structured Stanzas</button>
+  </div>
+
+  <!-- Prompt -->
+  <div class="prompt-wrap fade-up">
+    <label class="prompt-label" for="prompt">Opening line</label>
+    <textarea id="prompt" placeholder="In the quiet night…" rows="2">In the quiet night</textarea>
+  </div>
+
+  <!-- Suggestions -->
+  <div class="suggestions fade-up">
+    <button class="suggestion" onclick="setPrompt('In the quiet night')">In the quiet night</button>
+    <button class="suggestion" onclick="setPrompt('I miss her')">I miss her</button>
+    <button class="suggestion" onclick="setPrompt('Death be not proud')">Death be not proud</button>
+    <button class="suggestion" onclick="setPrompt('When she is gone')">When she is gone</button>
+    <button class="suggestion" onclick="setPrompt('O soul where art thou')">O soul where art thou</button>
+    <button class="suggestion" onclick="setPrompt('At dawn I remember')">At dawn I remember</button>
+  </div>
+
+  <!-- Controls -->
+  <div class="controls fade-up">
+    <div class="control-group">
+      <div class="control-label">Temperature <span id="temp-val">0.64</span></div>
+      <input type="range" id="temperature" min="0.4" max="1.2" step="0.02" value="0.64"
+             oninput="document.getElementById('temp-val').textContent=parseFloat(this.value).toFixed(2)">
+    </div>
+    <div class="control-group">
+      <div class="control-label">Top-K <span id="topk-val">24</span></div>
+      <input type="range" id="topk" min="5" max="80" step="1" value="24"
+             oninput="document.getElementById('topk-val').textContent=this.value">
+    </div>
+    <div class="control-group">
+      <div class="control-label">Repetition Penalty <span id="rep-val">1.16</span></div>
+      <input type="range" id="rep" min="1.0" max="1.5" step="0.01" value="1.16"
+             oninput="document.getElementById('rep-val').textContent=parseFloat(this.value).toFixed(2)">
+    </div>
+    <div class="control-group" id="length-control">
+      <div class="control-label">Length <span id="len-val">160</span></div>
+      <input type="range" id="length" min="60" max="300" step="10" value="160"
+             oninput="document.getElementById('len-val').textContent=this.value">
+    </div>
+    <!-- Stanza-only controls (hidden by default) -->
+    <div class="control-group" id="count-control" style="display:none">
+      <div class="control-label">Poems <span id="count-val">3</span></div>
+      <input type="range" id="count" min="1" max="6" step="1" value="3"
+             oninput="document.getElementById('count-val').textContent=this.value">
+    </div>
+    <div class="control-group" id="lines-control" style="display:none">
+      <div class="control-label">Lines per poem</div>
+      <div class="radio-group">
+        <label><input type="radio" name="lines" value="2"> Couplet (2)</label>
+        <label><input type="radio" name="lines" value="4" checked> Quatrain (4)</label>
+      </div>
+    </div>
+  </div>
+
+  <!-- Generate button -->
+  <button class="generate-btn fade-up" id="gen-btn" onclick="generate()">
+    ✦ &nbsp; Generate Poem &nbsp; ✦
+  </button>
+
+  <!-- Output -->
+  <div class="output-wrap fade-up" id="output-wrap">
+    <div class="output-header">
+      <span class="output-title">The poem</span>
+      <button class="copy-btn" onclick="copyPoem()">copy</button>
+    </div>
+    <div id="output" style="color:var(--muted); font-style:italic;">
+      Your poem will appear here…
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  Built with PyTorch · Trained on the works of Shakespeare, Blake & Dickinson<br>
+  <span style="opacity:0.5">~77k parameters · Single-layer LSTM · CPU trained</span>
+</footer>
+
+<script>
+  let currentMode = 'verse';
+
+  function setMode(mode) {
+    currentMode = mode;
+    document.querySelectorAll('.tab').forEach((t,i) => {
+      t.classList.toggle('active', (mode==='verse' && i===0) || (mode==='stanza' && i===1));
+    });
+    const isStanza = mode === 'stanza';
+    document.getElementById('length-control').style.display = isStanza ? 'none' : '';
+    document.getElementById('count-control').style.display = isStanza ? '' : 'none';
+    document.getElementById('lines-control').style.display = isStanza ? '' : 'none';
+    document.getElementById('gen-btn').textContent = isStanza
+      ? '✦   Generate Stanzas   ✦'
+      : '✦   Generate Poem   ✦';
+  }
+
+  function setPrompt(text) {
+    document.getElementById('prompt').value = text;
+  }
+
+  function typewriterEffect(element, text, speed=18) {
+    element.textContent = '';
+    const cursor = document.createElement('span');
+    cursor.className = 'cursor';
+    element.appendChild(cursor);
+    let i = 0;
+    const timer = setInterval(() => {
+      if (i < text.length) {
+        element.insertBefore(document.createTextNode(text[i]), cursor);
+        i++;
+      } else {
+        clearInterval(timer);
+        setTimeout(() => cursor.remove(), 2000);
+      }
+    }, speed);
+  }
+
+  async function generate() {
+    const prompt = document.getElementById('prompt').value.trim();
+    if (!prompt) return;
+
+    const btn = document.getElementById('gen-btn');
+    const outputEl = document.getElementById('output');
+    const wrap = document.getElementById('output-wrap');
+
+    btn.disabled = true;
+    btn.textContent = '…composing…';
+    wrap.classList.add('active');
+    outputEl.innerHTML = '<div class="loading-dots"><span></span><span></span><span></span></div>';
+
+    const temperature = parseFloat(document.getElementById('temperature').value);
+    const topK = parseInt(document.getElementById('topk').value);
+    const rep = parseFloat(document.getElementById('rep').value);
+
+    try {
+      let result;
+      if (currentMode === 'verse') {
+        const numTokens = parseInt(document.getElementById('length').value);
+        const res = await fetch('/generate', {
+          method: 'POST',
+          headers: {'Content-Type':'application/json'},
+          body: JSON.stringify({prompt, temperature, top_k: topK, repetition_penalty: rep, num_tokens: numTokens})
+        });
+        const data = await res.json();
+        result = data.text || data.error;
+      } else {
+        const count = parseInt(document.getElementById('count').value);
+        const lines = parseInt(document.querySelector('input[name=lines]:checked').value);
+        const res = await fetch('/generate_poems', {
+          method: 'POST',
+          headers: {'Content-Type':'application/json'},
+          body: JSON.stringify({prompt, temperature, top_k: topK, repetition_penalty: rep, poem_count: count, lines_per_poem: lines})
+        });
+        const data = await res.json();
+        if (data.poems) {
+          result = data.poems.map((p, i) =>
+            `— ${i+1} —\n` + p.join('\n')
+          ).join('\n\n');
+        } else {
+          result = data.error;
+        }
+      }
+
+      outputEl.style.color = '';
+      outputEl.style.fontStyle = '';
+      typewriterEffect(outputEl, result, 16);
+
+    } catch(e) {
+      outputEl.innerHTML = `<span class="error">Could not reach the model. Is the server running?</span>`;
+    }
+
+    btn.disabled = false;
+    btn.textContent = currentMode === 'verse'
+      ? '✦   Generate Poem   ✦'
+      : '✦   Generate Stanzas   ✦';
+    wrap.classList.remove('active');
+  }
+
+  function copyPoem() {
+    const text = document.getElementById('output').textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      const btn = document.querySelector('.copy-btn');
+      btn.textContent = 'copied ✓';
+      setTimeout(() => btn.textContent = 'copy', 2000);
+    });
+  }
+
+  // Enter key generates
+  document.getElementById('prompt').addEventListener('keydown', e => {
+    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); generate(); }
+  });
+</script>
+</body>
+</html>
