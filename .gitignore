@@ -27,3 +27,5 @@ poems.txt
 *.pt
 !poem_word_lstm_a1.pt
 shadow_gpt2/
+
+!poems_combined_v3_clean.txt
