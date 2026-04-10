@@ -4,31 +4,40 @@ emoji: 🌙
 colorFrom: indigo
 colorTo: pink
 sdk: gradio
+python_version: "3.12"
 sdk_version: 6.6.0
 app_file: app.py
+suggested_hardware: cpu-basic
 pinned: false
 license: mit
-short_description: Classical poetry generator with LSTM UI and training scripts
+tags:
+- gradio
+- pytorch
+- text-generation
+- poetry
+short_description: Classical poetry generator with an included LSTM checkpoint and Gradio UI
 ---
 
 # Shadow Poem Generator
 
-Shadow is a small poetry-generation project built around a word-level LSTM, with an additional nano-transformer training path for local experiments. The repository includes a Gradio app, a FastAPI server with a custom HTML frontend, corpus-cleaning utilities, and CLI scripts for training and poem generation.
+Shadow is a compact poetry-generation project built around a word-level PyTorch LSTM, with an additional nano-transformer training path for local experiments. The repository is now structured to work as both:
 
-## What is in this repo
+- A normal GitHub repo with training scripts, corpora, and local app entrypoints.
+- A Hugging Face Gradio Space using `app.py` as the public entrypoint.
 
-- `app.py`: Gradio interface used by the Hugging Face Space entrypoint.
-- `server.py` and `index.html`: FastAPI API plus a custom browser UI for local or Docker use.
+## Repo Layout
+
+- `app.py`: Gradio UI and Hugging Face Space entrypoint.
+- `server.py` and `index.html`: optional FastAPI API plus custom browser UI for local or Docker use.
 - `shadow.py`: main LSTM script for corpus cleaning, training, free-text generation, and stanza generation.
-- `shadow_transformer.py`: from-scratch nano transformer training and generation script in pure PyTorch.
-- `shadow_colab_train.ipynb`: Colab notebook for transformer training runs.
-- `build_combined_v3.py`: local corpus-building helper for larger public-domain poetry datasets.
-- `poem_word_lstm_a1.pt`: included LSTM checkpoint for immediate local use.
-- `poems.txt` and `poems_clean.txt`: raw and cleaned text corpora currently in the repo.
+- `shadow_transformer.py`: experimental nano-transformer training and generation script.
+- `build_combined_v3.py`: helper for building expanded local poetry corpora.
+- `poem_word_lstm_a1.pt`: included inference checkpoint, tracked with Git LFS.
+- `poems.txt`, `poems_clean.txt`, `poems_combined_v3_clean.txt`: corpora kept in the repo for reproducibility and training.
 
 ## Setup
 
-Use Python 3.10+.
+Use Python 3.12 for the same environment this repo was last smoke-tested with.
 
 ```bash
 python -m venv venv
@@ -48,13 +57,19 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-If you want the optional GPT-2 export path used by `server.py`, install `transformers` locally as well:
+If you plan to clone or push the included checkpoint, enable Git LFS before your first push:
+
+```bash
+git lfs install
+```
+
+If you want `server.py` to prefer a local GPT-2 export, install `transformers` as an extra:
 
 ```bash
 pip install transformers
 ```
 
-## Run the apps
+## Run Locally
 
 ### Gradio app
 
@@ -62,7 +77,16 @@ pip install transformers
 python app.py
 ```
 
-This is the default app path for Hugging Face Spaces and usually runs at `http://localhost:7860`.
+The default UI runs at `http://localhost:7860`.
+
+You can point the UI at a different checkpoint with `SHADOW_CHECKPOINT`.
+
+Windows PowerShell:
+
+```powershell
+$env:SHADOW_CHECKPOINT="poem_word_lstm_a1.pt"
+python app.py
+```
 
 ### FastAPI server
 
@@ -70,15 +94,7 @@ This is the default app path for Hugging Face Spaces and usually runs at `http:/
 python server.py
 ```
 
-When run directly, the server starts at `http://localhost:8000`.
-
-You can also run it explicitly through Uvicorn:
-
-```bash
-uvicorn server:app --host 0.0.0.0 --port 7860
-```
-
-If a local `shadow_gpt2/final` folder exists and `transformers` is installed, `server.py` will try that model first. Otherwise it falls back to the LSTM checkpoint.
+The local API server runs at `http://localhost:8000`. If a local `shadow_gpt2/final` directory exists and `transformers` is installed, `server.py` tries GPT-2 first and otherwise falls back to the included LSTM checkpoint.
 
 ### Docker
 
@@ -87,7 +103,7 @@ docker build -t shadow-poem-generator .
 docker run --rm -p 7860:7860 shadow-poem-generator
 ```
 
-## CLI examples
+## CLI Examples
 
 ### Clean a corpus
 
@@ -115,16 +131,34 @@ python shadow_transformer.py --mode train_and_generate_poems --text-path poems_c
 python shadow_transformer.py --mode generate_poems --checkpoint shadow_nano.pt --prompt "Death be not proud"
 ```
 
+## Upload To GitHub
+
+Create the GitHub repository first, then push this repo with Git LFS enabled:
+
+```bash
+git lfs install
+git remote add origin https://github.com/<your-user>/shadow-poem-generator.git
+git push -u origin main
+```
+
+The included `poem_word_lstm_a1.pt` checkpoint is already configured for Git LFS through `.gitattributes`.
+
+## Upload To Hugging Face Spaces
+
+1. Create a new **Gradio** Space in the Hugging Face UI.
+2. Keep `README.md` in the repo root. The YAML front matter at the top is the Space config.
+3. Push the same repository to the Space remote:
+
+```bash
+git lfs install
+git remote add hf https://huggingface.co/spaces/<your-user>/shadow-poem-generator
+git push hf main
+```
+
+The Space will start from `app.py` and use the included LSTM checkpoint. No extra download step is required as long as Git LFS uploads successfully.
+
 ## Notes
 
-- Large experimental corpora, extra checkpoints, and evaluation logs are intentionally treated as local artifacts rather than normal GitHub source files.
-- `build_combined_v3.py` expects local corpus source folders that are not part of a fresh clone.
-- The Gradio app is LSTM-first. The FastAPI server is the more flexible local entrypoint if you want model auto-selection.
-
-## Prompt ideas
-
-- `In the quiet night`
-- `I miss her`
-- `Death be not proud`
-- `When she is gone`
-- `O soul where art thou`
+- `app.py` and `server.py` now resolve checkpoints relative to the repo, so they do not depend on the current working directory.
+- Extra corpora, evaluation logs, and experimental checkpoints stay ignored unless explicitly whitelisted.
+- For a public Space, keep the repo lean and avoid committing `venv`, local notebook checkpoints, or large experimental model exports.

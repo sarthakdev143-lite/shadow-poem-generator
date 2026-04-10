@@ -1,7 +1,18 @@
 venv/
+.venv/
 __pycache__/
 *.py[cod]
 .env
+.DS_Store
+Thumbs.db
+.ipynb_checkpoints/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+.gradio/
+.vscode/
+.idea/
 
 # Generation logs and evaluation outputs
 poem_samples*.txt
@@ -10,6 +21,7 @@ final_*.txt
 quality_gate_report.md
 sanity_check.txt
 colab_test_output.txt
+*.log
 
 # Local corpus-building artifacts
 corpus_*/
@@ -28,4 +40,5 @@ poems.txt
 !poem_word_lstm_a1.pt
 shadow_gpt2/
 
+# Intentionally tracked for reproducible training examples
 !poems_combined_v3_clean.txt
